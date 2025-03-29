@@ -1,0 +1,21 @@
+{
+  "name": "users-service",
+  "version": "1.0.0",
+"scripts": {
+  "start": "nest start",
+  "start:dev": "nest start --watch",
+  "migration:generate": "ts-node --transpile-only ./node_modules/typeorm/cli.js migration:generate -d src/data-source.ts src/migrations/CreateUsersTable",
+  "migration:run": "ts-node --transpile-only ./node_modules/typeorm/cli.js migration:run -d src/data-source.ts"
+},
+  "dependencies": {
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/microservices": "^11.0.12",
+    "bcrypt": "^5.1.1",
+    "class-validator": "^0.14.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "ts-node": "^10.9.2",
+    "typeorm": "^0.3.21"
+  }
+}
